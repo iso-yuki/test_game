@@ -24,3 +24,29 @@ function moveImage() {
 
 // 画像がクリックされたときのイベントリスナー
 image.addEventListener('click', moveImage);
+
+// ウィンドウサイズの変更に対応するための関数
+function adjustImageSize() {
+    const gameAreaWidth = gameArea.clientWidth;
+    const gameAreaHeight = gameArea.clientHeight;
+    
+    const img = new Image();
+    img.src = image.src;
+    img.onload = function() {
+        const imgAspect = img.width / img.height;
+        const gameAreaAspect = gameAreaWidth / gameAreaHeight;
+
+        if (imgAspect > gameAreaAspect) {
+            image.style.width = 'auto';
+            image.style.height = '100%';
+        } else {
+            image.style.width = '100%';
+            image.style.height = 'auto';
+        }
+    };
+}
+
+// 初期サイズ調整
+adjustImageSize();
+// ウィンドウのリサイズイベントに対応
+window.addEventListener('resize', adjustImageSize);
