@@ -1,8 +1,8 @@
 /* ゲームエリアのスタイル */
 #gameArea {
     position: relative;
-    width: 100vw; /* ビューポートの幅に合わせる */
-    height: 100vh; /* ビューポートの高さに合わせる */
+    width: 80vw; /* ビューポートの幅に合わせる */
+    height: 80vh; /* ビューポートの高さに合わせる */
     border: 2px solid #000; /* ゲームエリアの境界線 */
     overflow: hidden; /* ゲームエリアからはみ出た部分を隠す */
     box-sizing: border-box; /* ボーダーとパディングを含めたサイズ計算 */
@@ -11,7 +11,7 @@
 /* 画像のスタイル */
 #movingImage {
     position: absolute;
-    width: 100px; /* 画像の幅 */
+    width: 10vw; /* 画像の幅 */
     height: auto; /* 高さを自動調整 */
     cursor: pointer; /* 画像にカーソルを合わせるとポインタに変更 */
 }
