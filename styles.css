@@ -1,20 +1,15 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+/* ゲームエリアのスタイル */
+#gameArea {
+    position: relative;
+    width: 500px; /* ゲームエリアの幅 */
+    height: 500px; /* ゲームエリアの高さ */
+    border: 2px solid #000; /* ゲームエリアの境界線 */
 }
 
-.container {
-    text-align: center;
-}
-
-button {
-    font-size: 1.5rem;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
+/* 画像のスタイル */
+#movingImage {
+    position: absolute;
+    width: 100px; /* 画像の幅 */
+    height: 100px; /* 画像の高さ */
+    cursor: pointer; /* 画像にカーソルを合わせるとポインタに変更 */
 }
