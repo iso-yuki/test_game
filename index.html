@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-board">
+        <div id="play-area">
+            <!-- プレイエリア -->
+        </div>
+        <div id="player1-hand" class="hand">
+            <!-- プレイヤー1の手札 -->
+        </div>
+        <div id="player2-hand" class="hand">
+            <!-- プレイヤー2の手札 -->
+        </div>
+        <button id="sort-button">Sort Hand</button>
+        <button id="play-button">Play Selected Cards</button>
+        <div id="selected-cards-area">
+            <!-- 選択されたカード用のエリア -->
+        </div>
+    </div>
+    <script type="module" src="deck.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game-board {
+    width: 80%;
+    height: 80%;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #0b3d0b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* スペースを確保 */
+    position: relative; /* 子要素の位置調整のため */
+}
+
+.hand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 150px; /* 手札の高さを固定 */
+    overflow: hidden; /* はみ出た部分を隠す */
+}
+
+.hand img {
+    width: 80px;
+    height: auto;
+    position: absolute;
+    transition: transform 0.3s;
+}
+
+/* カードを手札の中で重ねて表示 */
+.hand img:nth-child(n) {
+    left: calc(5% * var(--index));
+    transform: translateX(calc(var(--index) * -10px)); /* カードを少し左にシフト */
+}
+
+/* カードにインデックスを追加するための修正 */
+.hand img {
+    --index: 0;
+}
+.hand img.dragging {
+    opacity: 0.5; /* ドラッグ中のカードの透明度を下げる */
+}
+
+#sort-button {
+    position: absolute;
+    bottom: 20px;  /* 画面の下からの距離 */
+    right: 20px;   /* 画面の右からの距離 */
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#sort-button:hover {
+    background-color: #555;  /* ホバー時の色変更 */
+}
+
+#play-button {
+    position: absolute;
+    bottom: 50px;  /* 画面の下からの距離 */
+    right: 20px;   /* 画面の右からの距離 */
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#play-button:hover {
+    background-color: #555;  /* ホバー時の色変更 */
+}
+
+#play-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 200px;
+    background-color: #f5f5f5;
+    border: 2px dashed #888;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* プレイエリアを他の要素の上に表示 */
+}
+
+#player1-hand {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-top: 2px solid #888;
+}
+
+#player2-hand {
+    position: absolute;
+    top: 0;
+    width: 80%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #888;
+    transform: translateY(-100%); /* 上部に配置 */
+}
+
+#selected-cards-area {
+    position: absolute;
+    bottom: 160px; /* プレイヤー手札の下 */
+    width: 80%;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px dashed #888;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* はみ出た部分を隠す */
+    z-index: 1; /* プレイヤー手札の上に表示 */
+}
+
+#selected-cards-area img {
+    width: 60px; /* カードの幅を調整 */
+    height: auto; /* 高さは自動調整 */
+    margin: 0 5px; /* カード間のスペースを設定 */
+}
