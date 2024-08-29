@@ -10,6 +10,6 @@
 #movingImage {
     position: absolute;
     width: 100px; /* 画像の幅 */
-    height: 100px; /* 画像の高さ */
+    height: auto; /* 画像の高さ */
     cursor: pointer; /* 画像にカーソルを合わせるとポインタに変更 */
 }
