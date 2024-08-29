@@ -1,44 +1,26 @@
-// スコアと時間の初期値
-let score = 0;
-let timeLeft = 10; // タイマーの初期値（秒）
-let timer;
+// JavaScriptのコード
 
-// 要素を取得
-const scoreElement = document.getElementById('score');
-const timeElement = document.getElementById('time');
-const button = document.getElementById('scoreButton');
-const startButton = document.getElementById('startButton');
+// 画像とゲームエリアの要素を取得
+const image = document.getElementById('movingImage');
+const gameArea = document.getElementById('gameArea');
 
-// ボタンがクリックされたときの処理
-button.addEventListener('click', () => {
-    if (timeLeft > 0) { // タイマーがまだ動いている場合のみ
-        score += 1; // スコアを増やす
-        scoreElement.textContent = score; // スコアを表示
-    }
-});
+// 画像の移動位置を定義
+const positions = [
+    { top: '0px', left: '0px' },
+    { top: '0px', left: 'calc(100% - 100px)' },
+    { top: 'calc(100% - 100px)', left: '0px' },
+    { top: 'calc(100% - 100px)', left: 'calc(100% - 100px)' }
+];
 
-// スタートボタンがクリックされたときの処理
-startButton.addEventListener('click', () => {
-    // スコアとタイマーをリセット
-    score = 0;
-    timeLeft = 10; // タイマーの初期値をセット
-    scoreElement.textContent = score;
-    timeElement.textContent = timeLeft;
+// クリック時に画像を移動させる関数
+function moveImage() {
+    // ランダムな位置を選択
+    const randomPosition = positions[Math.floor(Math.random() * positions.length)];
     
-    // タイマーをセット
-    if (timer) {
-        clearInterval(timer);
-    }
-    timer = setInterval(updateTimer, 1000); // 1秒ごとにupdateTimer関数を呼び出す
-});
-
-// タイマーの更新処理
-function updateTimer() {
-    timeLeft -= 1; // 残り時間を1秒減らす
-    timeElement.textContent = timeLeft; // 残り時間を表示
-
-    if (timeLeft <= 0) {
-        clearInterval(timer); // タイマーを停止
-        alert('時間切れ! あなたのスコアは ' + score + ' です。'); // スコアを表示するアラート
-    }
+    // 画像の位置を変更
+    image.style.top = randomPosition.top;
+    image.style.left = randomPosition.left;
 }
+
+// 画像がクリックされたときのイベントリスナー
+image.addEventListener('click', moveImage);
