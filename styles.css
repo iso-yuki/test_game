@@ -11,7 +11,7 @@
 /* 画像のスタイル */
 #movingImage {
     position: absolute;
-    width: 10vw; /* 画像の幅 */
+    width: 100px; /* 画像の幅 */
     height: auto; /* 高さを自動調整 */
     cursor: pointer; /* 画像にカーソルを合わせるとポインタに変更 */
 }
