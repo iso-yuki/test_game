@@ -7,9 +7,9 @@ const gameArea = document.getElementById('gameArea');
 // 画像の移動位置を定義
 const positions = [
     { top: '0px', left: '0px' },
-    { top: '0px', left: 'calc(100% - 100px)' },
-    { top: 'calc(100% - 100px)', left: '0px' },
-    { top: 'calc(100% - 100px)', left: 'calc(100% - 100px)' }
+    { top: '0px', left: 'calc(50% - 100px)' },
+    { top: 'calc(50% - 100px)', left: '0px' },
+    { top: 'calc(50% - 100px)', left: 'calc(50% - 100px)' }
 ];
 
 // クリック時に画像を移動させる関数
